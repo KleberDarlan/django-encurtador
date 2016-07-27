@@ -37,12 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     # local apps
     'urlapp',
-
-    # libs
-    # 'shorturls',
 ]
 
 BASE_URL = 'http://cur.ta/'
