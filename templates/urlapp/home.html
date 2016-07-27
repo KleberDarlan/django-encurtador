@@ -36,7 +36,7 @@
             <a href="{{ obj.full_url }}" target="_blank">{{ obj.full_url }}</a>
           </td>
           <td>
-            <a href="{% url 'urlapp:short' obj.short_id %}" target="_blank">{{ obj.short_url }}</a>
+            <a href="{{ obj.short_url }}" target="_blank">{{ obj.short_url }}</a>
           </td>
           <td>
             <strong>{{ obj.counter }}</strong>

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'urlapp',
 ]
 
-BASE_URL = 'http://cur.ta/'
+# BASE_URL = 'http://cur.ta/'
+BASE_URL = 'http://localhost:8000/'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

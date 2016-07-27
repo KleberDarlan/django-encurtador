@@ -38,7 +38,7 @@ class UrlRequestView(generic.View):
 
     def get(self, request, id=None):
         if id:
-            url = Url.objects.get(short_id=id)
+            url = Url.objects.get(short_url__icontains=id)
             url.counter += 1
             url.save()
             return redirect(url.full_url)
