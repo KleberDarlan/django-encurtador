@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="row">
+    <form class="form" action="{% url 'urlapp:create' %}" method="post">
+      {% csrf_token %}
+      <div class="col-lg-5">
+        {% for field in form %}
+        {{ field }}
+        {% endfor %}
+      </div>
+      <div class="col-lg-1">
+        <input type="submit" name="btnSend" class="btn btn-primary" value="Cadastrar">
+      </div>
+    </form>
+  </div><br>
+  <div class="row">
+    <div class="col-lg-6">
+      <table class="table table-condensed">
+        <th>
+          URL Completa
+        </th>
+        <th>
+          URL Encurtada
+        </th>
+        <th>
+          Contador
+        </th>
+        <th>
+          Data de Criação
+        </th>
+        {% for obj in urls %}
+        <tr class="info">
+          <td>
+            <a href="{{ obj.full_url }}" target="_blank">{{ obj.full_url }}</a>
+          </td>
+          <td>
+            <a href="{% url 'urlapp:short' obj.short_id %}" target="_blank">{{ obj.short_url }}</a>
+          </td>
+          <td>
+            <strong>{{ obj.counter }}</strong>
+          </td>
+          <td>
+            <strong>{{ obj.created_at|date:'d/m/Y' }}</strong>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock %}

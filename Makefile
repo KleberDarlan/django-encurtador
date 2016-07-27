@@ -21,4 +21,4 @@ superuser:
 	@$(MANAGE_PY) createsuperuser
 
 requirements:
-	@$(PIP) -r requirements.txt
+	@$(PIP) install -r requirements.txt

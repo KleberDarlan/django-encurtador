@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="alert alert-info">
+    <h4>{{ message }}</h4>
+  </div>
+  <a href="{% url 'urlapp:home' %}" class="btn btn-primay">Início</a>
+{% endblock %}
