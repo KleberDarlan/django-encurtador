@@ -8,7 +8,7 @@ from .signals import post_save_url
 class Url(models.Model):
     full_url = models.URLField('URL')
     short_url = models.CharField('URL Encurtada', max_length=50, null=True, blank=True)
-    short_id = models.UUIDField(default=uuid.uuid1, editable=False)
+    short_id = models.UUIDField(default=uuid.uuid4, editable=False)
     counter = models.PositiveIntegerField(
         'Contador', null=False, blank=False, default=0
     )
