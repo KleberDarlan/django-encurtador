@@ -1,7 +1,8 @@
 import uuid
 import short_url
 from django.db import models
-from django.conf import settings
+from django.db.models.signals import post_save
+from .signals import post_save_url
 
 
 class Url(models.Model):
@@ -17,6 +18,6 @@ class Url(models.Model):
     def __str__(self):
         return self.full_url
 
-    def save(self, *args, **kwargs):
-        self.short_url = settings.BASE_URL + short_url.encode_url(self.short_id.clock_seq)
-        super(Url, self).save(*args, **kwargs)
+post_save.connect(
+    post_save_url, sender=Url, dispatch_uid='post_save_url'
+)
