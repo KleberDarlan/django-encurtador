@@ -1,3 +1,3 @@
 # django-encurtador
-Repositório para teste de encurtador de urls com django.
+Encurtador de urls com django.
 
